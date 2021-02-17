@@ -7,7 +7,7 @@ import javax.swing.*;
 public class Drawing extends JFrame implements MouseListener{
 	
 	public JPanel panel;
-	public JButton bt1();
+
 	
 	public Drawing(){
 		this.setSize(500,500);
