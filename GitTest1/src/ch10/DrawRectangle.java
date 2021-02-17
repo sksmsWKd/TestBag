@@ -13,7 +13,7 @@ import java.awt.event.*;
 public class DrawRectangle  extends JFrame{
 	public DrawRectangle() {
 	
-	this.setSize(300,300);
+	this.setSize(300,300); 
 	this.setTitle("마우스로그리기");
 	this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	this.add(new MyPanel());
