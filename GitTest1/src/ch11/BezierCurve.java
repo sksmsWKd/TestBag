@@ -1,3 +1,4 @@
+
 package ch11;
 import javax.swing.*;
 import java.awt.*;
@@ -46,7 +47,7 @@ public class BezierCurve extends JPanel implements MouseListener,MouseMotionList
 	public void mouseReleased(MouseEvent e) {
 		// TODO Auto-generated method stub
 		drageIndex=-1;
-		frame.repaint();  //³õÀ»¶§ frameÀ» repaintÇÕ´Ï´Ù.
+		frame.repaint();  //ë†“ì„ë•Œ frameì„ repaintí•©ë‹ˆë‹¤.
 	}
 	@Override
 	public void mouseDragged(MouseEvent e) {
@@ -106,3 +107,20 @@ public static void main (String[]args) {
 }
 //mouse adapter class
 //markdown cheat sheet
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
