@@ -177,7 +177,7 @@ public class PizzaOrderDemo extends JFrame implements ActionListener{
 			if(small.isSelected()) {
 				temp3 =0;
 				System.out.println("스몰사이즈 선택");
-			}else if(medium.isSelected()) {
+			}else if(medium.isSelected()) {  // e.getSource 대신에 버튼은 isSelected를 사용한다.
 				temp3 =2000;
 			}else if(large.isSelected()) {
 				temp3 = 3000;
