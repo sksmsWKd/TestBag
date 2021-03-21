@@ -13,8 +13,8 @@ public class TextConverter extends JFrame implements ActionListener{
 	private JButton cancelBtn;
 	private JTextArea textIn;
 	private JTextArea textOut;
-		private final String CLIENT_ID= "";// 클라이언트 아이디 입력
-	private final String CLIENT_SECRET= "";// 클라이언트 비밀번호 입력
+		private final String CLIENT_ID= "";// 클라이언트 아이디 입력 . 사용후 꼭 지워주세요
+	private final String CLIENT_SECRET= "";// 클라이언트 비밀번호 입력 . 사용후 꼭 지워주세요
 	private ButtonGroup bg1 ;
 	private JRadioButton eng ;
 	private JRadioButton kor ;
