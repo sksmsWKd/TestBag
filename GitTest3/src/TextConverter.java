@@ -13,8 +13,8 @@ public class TextConverter extends JFrame implements ActionListener{
 	private JButton cancelBtn;
 	private JTextArea textIn;
 	private JTextArea textOut;
-		private final String CLIENT_ID= "";
-	private final String CLIENT_SECRET= "";
+		private final String CLIENT_ID= "wbNMkqzSKC4YlTxkxRb1";
+	private final String CLIENT_SECRET= "xoonsMdBzf";
 	private ButtonGroup bg1 ;
 	private JRadioButton eng ;
 	private JRadioButton kor ;
@@ -74,8 +74,8 @@ public class TextConverter extends JFrame implements ActionListener{
 	        }
 
 	        Map<String, String> requestHeaders = new HashMap<>();
-	        requestHeaders.put("X-Naver-Client-Id",CLIENT_ID);
-	        requestHeaders.put("X-Naver-Client-Secret",CLIENT_SECRET);
+	        requestHeaders.put("X-Naver-Client-Id", CLIENT_ID);
+	        requestHeaders.put("X-Naver-Client-Secret", CLIENT_SECRET);
 
 	       result = post(apiURL, requestHeaders, text);
 	       System.out.println(result);

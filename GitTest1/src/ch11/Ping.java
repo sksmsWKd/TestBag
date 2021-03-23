@@ -1,10 +1,11 @@
+package ch11;
 
 import java.awt.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.*;
 import javax.swing.Timer;
-public class PingPongGame extends JPanel implements KeyListener{
+public class Ping extends JPanel implements KeyListener{
 
 		private Ball ball;
 		protected Racquet racquet1;
@@ -20,7 +21,7 @@ public class PingPongGame extends JPanel implements KeyListener{
 		
 	
 		
-	public 	PingPongGame() {
+	public 	Ping() {
 		ball = new Ball(this, Color.yellow);   // f라켓이랑박았는지확인
 		this.setBackground(Color.black);
 		racquet1 = new Racquet(this, 10, 150 ,Color.blue, 1);
@@ -84,7 +85,7 @@ public class PingPongGame extends JPanel implements KeyListener{
 	class Ball{
 		private static final int RADIUS = 20;   //원의반지름
 		private int x=300, y=200 ,xSpeed =1 , ySpeed =1; 
-		private PingPongGame game;
+		private Ping game;
 		private Color color;
 		boolean touch  =false;
 
@@ -94,7 +95,7 @@ public class PingPongGame extends JPanel implements KeyListener{
 
 		 
 		
-		public Ball (PingPongGame game , Color color) {
+		public Ball (Ping game , Color color) {
 			this.game= game;
 			this.color = color;
 			
@@ -208,14 +209,14 @@ public class PingPongGame extends JPanel implements KeyListener{
 		private int x=0 , y=0;
 		protected int xSpeed =0;
 		protected int ySpeed =0;
-		private PingPongGame game;
+		private Ping game;
 		private Color color;
 		private int s  ;
 
 
 		
 		
-		public Racquet(PingPongGame game, int x, int y, Color color,int s) {
+		public Racquet(Ping game, int x, int y, Color color,int s) {
 			this.game=game;
 			this.x = x;
 			this.y= y;
@@ -297,7 +298,7 @@ public class PingPongGame extends JPanel implements KeyListener{
 
 public static void main (String [] args) {
 	JFrame frame = new JFrame();
-	PingPongGame panel = new PingPongGame();
+	Ping panel = new Ping();
 	frame.add(panel);
 	frame.setVisible(true);
 	frame.setSize(600,400);
