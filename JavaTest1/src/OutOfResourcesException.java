@@ -7,4 +7,4 @@ public class OutOfResourcesException extends Exception {
 		
 		System.out.println("OutOfResourcesException 생성 완료");
 	}
-}
+}//
