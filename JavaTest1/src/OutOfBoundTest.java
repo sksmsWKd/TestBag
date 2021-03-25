@@ -14,5 +14,5 @@ public class OutOfBoundTest {
 			System.out.println("무조건 실행이 되는 구문입니다."); // 예외와 상관없이 무조건 실행됨
 		}
 		System.out.println("이건 항상 실행이됩니다");
-	}////
+	}//////
 }
