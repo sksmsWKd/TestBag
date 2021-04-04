@@ -97,6 +97,6 @@ public class MyArrayList2<T>{//arraylist비슷하게 그냥 array로 구현.  �
 			System.out.print(i + " ");
 		}
 
-	}//.
+	}//..
 
 }
