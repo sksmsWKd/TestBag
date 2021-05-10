@@ -1,9 +1,23 @@
 // 21/05/06 map 과 swing 이용한 간단사전
 
-import javax.swing.*;
-import java.awt.event.*;
-import java.util.*;
-import java.awt.*;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Properties;
+import java.util.Set;
+import java.lang.Object;
+
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
 
 
 
@@ -22,7 +36,8 @@ public class SimpleDictionary extends JPanel implements ActionListener {
 	 * <key, value> 쌍으로 저장 , key 는 한글단어 , value 는 대응되는 영어단어
 	 */
 
-	private Map<String, String> dict = new HashMap<>();
+	 Map<String, String> dict = new HashMap<>();
+	private static final String DIC_FILE_NAME = "dict.props";
 	// map 객체를 생성시 map 을 구현한 자료구조 생성
 
 	public SimpleDictionary() {
@@ -36,6 +51,34 @@ public class SimpleDictionary extends JPanel implements ActionListener {
 
 		this.setPreferredSize(new Dimension(600, 50));
 		// 파일에 key = value 형태로 저장된 엔트리들을 읽어서 , dict 를 구성하자.
+		buildDictionaryFromFile();
+	}
+	
+	private void buildDictionaryFromFile() {
+		Properties props = new Properties();
+		//Properties 도 일종의 map 인데,
+		//key 와 value 의타입이 각각 String 으로 고정된/
+//		props.put("사과", "apple");
+//		System.out.println(props.get("사과"));
+		//파일에서 읽어서 props 객체의 <key,value> 
+		//쌍을 구할 수 있다.
+		
+		try (FileReader fReader = new FileReader(DIC_FILE_NAME)){
+		
+		props.load(fReader);
+		}catch(Exception e) {
+			System.out.println(e.getMessage());
+		}
+		
+//		Set<java.lang.Object> set = props.keySet();
+//		for(java.lang.Object obj :set ) {
+//			words.put((String)obj, (String)props.get(obj));
+//		}
+	
+		Set<Object> set = props.keySet();
+		for(Object obj :set ) {
+			dict.put((String)obj, (String)props.get(obj));
+		}
 	}
 
 	@Override
@@ -77,16 +120,28 @@ public class SimpleDictionary extends JPanel implements ActionListener {
 			if(value.trim().length()==0)return;
 			
 			dict.put(key, value);
+			addWordToFile(key,value);
 			JOptionPane.showMessageDialog(this, value+"영어단어가 추가되었습니다", key , JOptionPane.INFORMATION_MESSAGE );
 		}
-		inputField.setText("");
+	//	inputField.setText("");
 		
+	}
+	private void addWordToFile(String key, String value) {
+		try (FileWriter fWriter = new FileWriter(DIC_FILE_NAME, true)){
+			fWriter.write(key+"="+value+"\n");
+			
+			
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 	}
 
 	public static void main(String[] args) {
 		JFrame frame = new JFrame();
 		SimpleDictionary dictPanel = new SimpleDictionary();
 		frame.add(dictPanel);
+		frame.setLocationRelativeTo(dictPanel);
 
 		frame.setResizable(false);
 		frame.pack();
