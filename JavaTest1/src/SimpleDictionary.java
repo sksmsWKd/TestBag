@@ -75,7 +75,54 @@ public class SimpleDictionary extends JPanel implements ActionListener{
        * 2. 실행할 SQL 문이 select 문일 경우. = pstmt.executeQuery();
        */
 
-  
+		/*
+		 * 1. DATABASE server 연결한다
+		 * 		a. JDBC 드라이버 메모리에 로딩 (적재)연결
+		 * 			->>
+		 * 		b. DriverManager (java.sql 패키지에 정의된 클래스)
+		 * 		 
+		 *  	Connection con = DriveManager.getConnection
+		 *  메서드를 호출해 연결을 설립(유지됨)
+		 *  이때 연결 정보를 getConnection() 메서드에 전달해줘야함.
+		 *  연결정보 DB server 의 URL =>          (((ip,주소 ,, port 주소 데이트베이스 이름,))++ db 사용자의 아이디와 암호) 
+		 *  
+		 *  2.Connection 객체를 통해 SQL 문 실행을 서버에 요청 하고 그 결과를 받아 처리
+		 *  크케 2가지 방법이있음
+		 *  
+		 *  =첫째는 con.createStatement() 메소드 호출을 통해서 반환되는 Statement 객체를 이용 <-정적 sql문
+		 *  select * from dict where han = ?
+		 *  
+		 *  이 예에서는 PreperedStatement 객체를 이용
+		 *  
+		 * 
+		 *  =두번째는 con.propareStatelment() 메서드 호출을 통해서
+		 *  
+		 *  selet *from dict where han - => <<동적 sql문
+		 *  
+		 *  
+		 *  반환되는 PreparedStatement 객체를 이용하는 방법 (동적 sq;문
+		 *  동적 sql 문: 프로그래밍 시점에 설치할 준비를  )
+		 *  
+		 *  
+		*
+		 * 
+		 */
+
+
+	   /*    어느 db던지 같이 사용가능.
+		 * sql 문이 조금 달라질수는 있는데.. sql 표준을 따름
+		 * 
+		 * 
+		 * 
+		 * 	
+		//1. 문법적 검사
+		//2. 정당성 검사
+	    //3. execution plag세움
+	    //4. execute
+	
+			//이 예에서는 PreperedStatement객체를 이용
+		//String sql = "select * from dict";
+		*/
 
 //   Connection con = null;
    Statement stmt = null;
@@ -105,6 +152,14 @@ public class SimpleDictionary extends JPanel implements ActionListener{
          // ex) char, varchar 타입의 컬럼은 getString('컬럼이름'또는 '컬럼위치');
          // int 타입은 getInt();
          // DateTime, Date 타입은 getDate();
+    	  
+    	//현재 포인터가 가리키는 칼럼 값을 빼오면 됨
+			//각 칼럼의 타입에 따라서 , 호출할 메서드가 달라진다.
+			//예를들어서 char , varvchar 타입의 칼럼은
+			//getString("칼럼이름" 또는 "칼럼위치");
+			//int 타입의 칼럼은 getInt(...);
+			//DateTime, Date 타입의 칼럼 값은
+			//getDate();
 
     	  String key = rs.getString("hword");
     	  String value= rs.getString("eword");
@@ -164,6 +219,8 @@ public class SimpleDictionary extends JPanel implements ActionListener{
           * "단어를 찾을 수 없습니다." 출력
           * inputField를 빈문자열로 설정.
           */
+    	  
+    	  
 
          System.out.println("[" + key + "]");
          String value = dict.get(key);
