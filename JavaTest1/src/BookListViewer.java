@@ -48,7 +48,7 @@ public class BookListViewer extends JFrame implements ActionListener{
 		 * 123 후 PreparedStatement 객체 반환
 		 * 4. execute 
 		 */
-		PreparedStatement pstmt = con.prepareStatement(sql);
+		PreparedStatement pstmt = con.prepareStatement(sql,ResultSet.TYPE_SCROLL_SENSITIVE,ResultSet.CONCUR_UPDATABLE);
 		/*
 		 * select 문을 실행할 때는 executeQuery()메서드를 사용하고
 		 * 그외 , insert ,delete, update 문을 실행할 때는
