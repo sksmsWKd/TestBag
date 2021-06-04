@@ -14,10 +14,13 @@ public class MyServerSocket01 {
                         while(true) {
                         Socket socketUser = serverSocket.accept(); // 소켓 서버로 접속 시 socketUser에 접속자 정보 할당
                         System.out.println("Client가 접속함 : " + socketUser.getLocalAddress()); // 접속자의 getLocalAddress 가져오기
+                  
+
+                    
                         }			
-            
+         
 		} catch (IOException e) {
-			e.printStackTrace();
+			e.printStackTrace(); 
 		}
 
 	}
