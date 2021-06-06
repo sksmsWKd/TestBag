@@ -8,7 +8,7 @@ public static void main(String[]args) throws Exception{
 	String site = "http://localhost:9090/todos";
 	
 	URL url = new URL(site);
-	
+	  
 	HttpURLConnection con = (HttpURLConnection)url.openConnection();
 	//http connection 으로강제변환
 	con.setDoInput(true);
