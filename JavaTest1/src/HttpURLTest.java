@@ -8,7 +8,7 @@ public class HttpURLTest {
 		HttpURLConnection con = (HttpURLConnection)url.openConnection();
 		con.setRequestMethod("GET");
 		con.setRequestProperty("User-Agent", "Mozilla/5.0");
-		
+		  
 		 int responseCode = con.getResponseCode();
 		 System.out.println("Response Code :  "+ responseCode);
 		 
