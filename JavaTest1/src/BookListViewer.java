@@ -42,7 +42,7 @@ public class BookListViewer extends JFrame implements ActionListener{
 		con.prepareStatement(sql);
 		
 		/*
-		 * 1. 문법적 검사
+		 * 1. 문법적 검사  
 		 * 2. 정당성 검사
 		 * 3. execution plag세움
 		 * 123 후 PreparedStatement 객체 반환
