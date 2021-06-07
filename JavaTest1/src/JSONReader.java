@@ -143,3 +143,12 @@ public class JSONReader {
 		//연결해제
 	}
 }
+
+
+
+/*
+ * https://habbang0.tistory.com/23
+ * 참고.
+ * 나중에 해야할것 - >한줄짜리 데이터 파싱
+ * DB연결하기
+ */
