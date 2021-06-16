@@ -6,9 +6,10 @@ import java.util.stream.IntStream;
 
 public class CollectionTest {
 	public static void main(String[] args) {
-		test2();
-		// test1();
-		test3();
+		//test2();
+		test1();
+		//test3();
+		//setTest();
 	}
 	public static void test3() {  //arraylist
 		ArrayList<String>list = new ArrayList<>();

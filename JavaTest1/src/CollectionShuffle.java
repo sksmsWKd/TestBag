@@ -6,7 +6,7 @@ public class CollectionShuffle {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		shuffleTest();
+		//shuffleTest();
 		binarySearchTest();
 	}
 	public static void binarySearchTest() {

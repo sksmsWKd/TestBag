@@ -34,6 +34,8 @@ public class CollectionTest1 {
 		
 		Collections.shuffle(list);
 		System.out.println("셔플 후 .."+ list);
+		
+		
 		//원소의 타입 클래스를 내가 변경 할수있다면 Comparable 인터페이스를 구현해서 정렬 방법 변경 가능
 		
 		//원소의 타입 클래스를 내가 변경 할수없다면 (내가 구현 안한거String Integer..) Comparator 클래스를 구현해서 정렬 방법을 알려줘야 한다
