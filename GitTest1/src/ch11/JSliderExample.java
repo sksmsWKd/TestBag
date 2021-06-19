@@ -25,11 +25,12 @@ public class JSliderExample extends JFrame implements ChangeListener,ActionListe
 	public void stateChanged(ChangeEvent e) {
 		// TODO Auto-generated method stub
 		JSlider source = (JSlider) e.getSource();
-		if(!source.getValueIsAdjusting()) {// getValueIsAdjusting ë³€ê²½ì  ê°ì§€í•´ì„œ ë§ì”Œìš°ê¸°ê°™ì€ëŠë‚Œ
+		if(!source.getValueIsAdjusting()) {// getValueIsAdjusting ÇÔ¼ö´Â ¾î¶² ÀÌº¥Æ® ÀÎ½ºÅÏ½º¿¡¼­ ¿¬¼ÓÀûÀ¸·Î ÀÌº¥Æ®°¡ ÀÏ¾î ³µÀ» ¶§, 
+			//ÇØ´ç ÀÌº¥Æ® ÀÎ½ºÅÏ½ºµéÀ» ÀÏÁ¾ÀÇ µ¥ÀÌÅÍ Ã¼ÀÎÀ¸·Î º¸°í Ã¼ÀÎÀÇ ¸¶Áö¸· ÀÎ½ºÅÏ½º ¿Ü¿¡¼­ È£ÃâÇÏ´Â °æ¿ì true¸¦ ¹İÈ¯ÇÏ´Â ÇÔ¼öÀÌ´Ù.
 			
 			
 		int value = (int) slider.getValue();
-		imgBtn.setSize(value*10, value*10);// ì‚¬ì´ì¦ˆ ì¡°ì ˆ
+		imgBtn.setSize(value*10, value*10);// ½½¶óÀÌ´õÀÇ »óÅÂ°¡ º¯°æµÇ¸é È£ÃâµÊ
 		}
 	}
 	public JSliderExample(){
@@ -38,10 +39,10 @@ public class JSliderExample extends JFrame implements ChangeListener,ActionListe
 		this.add(panel);
 		
 		slider = new JSlider(0,30,INT_VALUE);
-		slider.setMajorTickSpacing(10);  //í°ëˆˆê¸ˆ ê°„ê²©
-		slider.setMinorTickSpacing(1); //ì‘ì€ëˆˆê¸ˆê°„ê²©
-		slider.setPaintTicks(true); //ëˆˆê¸ˆí‘œì‹œ
-		slider.setPaintLabels(true); //ê°’ì„ ë ˆì´ë¸”ë¡œ í‘œì‹œ - > ìŠ¬ë¼ì´ë”ì•„ë˜ ìˆ«ì
+		slider.setMajorTickSpacing(10);  //Å«´«±İ °£°İ
+		slider.setMinorTickSpacing(1); //ÀÛÀº´«±İ °£°İ
+		slider.setPaintTicks(true); //´«±İ Ç¥½ÃÇÑ´Ù. ÀÌ°Å ¾ÈÇÏ¸é ´«±İ ¾È³ª¿È
+		slider.setPaintLabels(true); //°ªÀ» ·¹ÀÌºí·Î Ç¥½ÃÇÔ. ¾Æ¸¶ Å«´«±İ ±âÁØÀÎ°Å°°´Ù
 		slider.addChangeListener(this);
 		
 		imgBtn = new JButton();
@@ -50,7 +51,7 @@ public class JSliderExample extends JFrame implements ChangeListener,ActionListe
 		imgBtn.setSize(INT_VALUE*10, INT_VALUE*10);
 		imgBtn.addActionListener(this);
 		
-		label = new JLabel("ì´ë¯¸ì§€ ëˆ„ë¥´ë©´ ì›ë˜ì‚¬ì´ì¦ˆë¡œ ë°”ê¿”ì¤ë‹ˆë‹¤.");
+		label = new JLabel("ÀÌ¹ÌÁö¸¦ ´©¸£¸é »çÀÌÁî°¡ ¿ø·¡´ë·Î µ¹¾Æ¿À°í, ½½¶óÀÌµå Á¶Á¤½Ã ÀÌ¹ÌÁöÅ©±âº¯°æ");
 		
 		panel.add(label);
 		panel.add(slider);
